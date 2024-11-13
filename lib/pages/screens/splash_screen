@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:contractapp/pages/homepage.dart';
+import 'package:contractapp/pages/login_page.dart';
+import 'dart:async'; // For delay
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Navigate to the next page after a delay
+    Timer(Duration(seconds: 2), () {
+      // Navigate to the home page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF00754B), // Splash screen background color
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Add your logo here, you can use an Image widget
+          
+            SizedBox(height: 20),
+            Text(
+              'CONTRACTORS',  // App name or brand name
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                
+                
+              ),
+            ),
+            SizedBox(height: 10),
+           
+          ],
+        ),
+      ),
+    );
+  }
+}
